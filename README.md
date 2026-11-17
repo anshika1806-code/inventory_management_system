@@ -29,8 +29,7 @@ src/
 | POST | /api/products | Create product |
 | GET | /api/products | List with filter / sort / pagination |
 | GET | /api/products/:id | Get single product |
-| PUT | /api/products/:id | Update product details |
-| PATCH | /api/products/:id/stock | Restock / sale: `{ "change": 10 }` or `{ "change": -3 }` |
+| PUT | /api/products/:id | Update product details | |
 | DELETE | /api/products/:id | Delete product |
 | GET | /api/products/low-stock | Items where quantity <= reorderLevel (aggregation) |
 | GET | /api/products/summary | Category-wise summary (aggregation) |
@@ -47,17 +46,13 @@ POST:
 { "name": "Gel Pen Pack of 15", "sku": "STNY-PN-713", "category": "Stationery",
   "price": 120, "quantity": 40, "reorderLevel": 20, "supplier": "Cello Pens" }
 ```
-PATCH `/api/products/:id/stock`:
-```json
-{ "change": 10 }
-```
 
 ## Design notes
 - Schema validation: required fields, min values, integer quantity, SKU format, unique + uppercase SKU.
 - `stockValue` is a virtual (`price * quantity`) included in JSON output.
 - Stock adjustment uses an atomic `$inc` with a guard, so stock never goes below zero.
 - Centralized error handler maps validation (400), bad ids (400), duplicate SKU (409), missing resources (404).
-- Static routes (`/low-stock`, `/summary`) are registered before `/:id`.
+
 ## API Screenshots (Postman)
 
 ### 1. Get All Products (total 12, 10 per page)
