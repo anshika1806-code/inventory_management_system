@@ -61,22 +61,13 @@ PATCH `/api/products/:id/stock`:
 ## API Screenshots (Postman)
 
 ### 1. Get All Products (total 12, 10 per page)
-![Get All Products](postman_images/01-get-all-products.png)
+![Get All Products](postman_images/image.png)
 
 ### 2. Create Product (POST)
-![Create Product](postman_images/02-create-product.png)
+![Create Product](postman_images/image2.png)
 
 ### 3. Update Product (PUT)
-![Update Product](postman_images/03-update-product.png)
+![Update Product](postman_images/image3.png)
 
 ### 4. Delete Product (DELETE)
-![Delete Product](postman_images/04-delete-product.png)
-
-### 5. Low-Stock Report
-![Low Stock](postman_images/05-low-stock.png)
-
-### 6. Category-wise Summary
-![Category Summary](postman_images/06-category-summary.png)
-
-### 7. Stock Adjustment (PATCH)
-![Stock Adjustment](postman_images/07-stock-adjustment.png)
+![Delete Product](postman_images/image4.png)
